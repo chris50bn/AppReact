@@ -30,4 +30,8 @@ module.exports = StyleSheet.create({
   mt: {
     marginTop: 20,
   },
+  containerA: {
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
 });

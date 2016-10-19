@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import { TouchableOpacity, Image } from 'react-native';
 import { connect } from 'react-redux';
-import { Container, Header, Title, Content, Text, Button, Icon } from 'native-base';
+import { Container, Header, Title, Content, Text, Button, Icon , CardSwiper, DeckSwiper, Picker, Card, CardItem, Thumbnail, List, ListItem} from 'native-base';
 import { Grid, Row } from 'react-native-easy-grid';
 
 import { openDrawer, closeDrawer } from '../../actions/drawer';
@@ -14,7 +14,12 @@ import styles from './styles';
 const background = require('../../../images/debate3.jpg');
 
 
+const Item = Picker.Item;
+
+
 class Home extends Component {
+
+
 
   static propTypes = {
     openDrawer: React.PropTypes.func,
@@ -36,6 +41,8 @@ class Home extends Component {
     this.props.pushNewRoute(route);
   }
 
+
+
   render() {
     return (
       <Container theme={myTheme} style={styles.container}>
@@ -45,18 +52,14 @@ class Home extends Component {
             <Icon name="ios-power" />
           </Button>
 
-          <Title>{(this.props.name) ? this.props.name : 'AppDebate'}</Title>
+          <Title>{(this.props.name) ? this.props.name : 'Between'}</Title>
 
           <Button transparent onPress={this.props.openDrawer}>
             <Icon name="ios-menu" />
           </Button>
         </Header>
         <Content>
-          <Button block> Debates </Button>
-          <Button block success> Informacion del debate </Button>
-          <Button block info> Información </Button>
-          <Button block warning> Reglamento </Button>
-          <Button block danger> Preguntas </Button>
+          <Button block success onPress={() => this.pushNewRoute('blankPage')}> Debates </Button>
         </Content>
         </Image>
       </Container>
