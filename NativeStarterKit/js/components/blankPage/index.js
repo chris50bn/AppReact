@@ -4,6 +4,7 @@ import { Container, Header, Title, Content, Text, Button, Icon } from 'native-ba
 
 import { openDrawer } from '../../actions/drawer';
 import { popRoute } from '../../actions/route';
+import myTheme from '../../themes/base-theme';
 import styles from './styles';
 import {
   AppRegistry,
@@ -13,7 +14,7 @@ import {
 } from 'react-native';
 
 
-var REQUEST_URL = 'http://localhost:8080/RestA3/ws/clienteData';
+var REQUEST_URL = 'https://raw.githubusercontent.com/facebook/react-native/master/docs/MoviesExample.json';
 
 class BlankPage extends Component {
 
@@ -50,33 +51,35 @@ componentDidMount() {
     .done();
 }
 
-
 render() {
-  const { props: { name, index, list } } = this;
-
-    if (!this.state.loaded) {
-       return (
-         <Container style={styles.container}>
-           <Header>
-             <Button transparent onPress={() => this.popRoute()}>
-               <Icon name="ios-arrow-back" />
-             </Button>
-
-             <Title>{(name) ? this.props.name : 'Blank Page'}</Title>
-
-             <Button transparent onPress={this.props.openDrawer}>
-               <Icon name="ios-menu" />
-             </Button>
-           </Header>
-           <Container>
-
-            this.renderLoadingView
-         </Container>
-         </Container>
-     );
-    }
+    const { props: { name, index, list } } = this;
 
     return (
+      <Container  style={styles.container}>
+        <Header>
+          <Button transparent onPress={() => this.popRoute()}>
+            <Icon name="ios-arrow-back" />
+          </Button>
+
+          <Title>{(name) ? this.props.name : 'Blank Page'}</Title>
+
+          <Button transparent onPress={this.props.openDrawer}>
+            <Icon name="ios-menu" />
+          </Button>
+        </Header>
+
+        <Content padder>
+          <Text>
+            {(!isNaN(index)) ? list[index] : 'Create Something Awesome . . .'}
+          </Text>
+        </Content>
+      </Container>
+    );
+  }
+
+
+
+/*    return (
 
       <Container style={styles.container}>
         <Header>
@@ -92,14 +95,14 @@ render() {
         </Header>
         <Container>
           var cliente = this.state.loaded[0];
-          this.rendercliente(cliente);
+          this.renderCliente(cliente);
           </Container>
         </Container>
 
-  );
+  );*/
 
-}
 
+/*
 renderLoadingView() {
   return (
     <View style={styles.container}>
@@ -110,54 +113,29 @@ renderLoadingView() {
   );
 }
 
-rendercliente(cliente) {
+renderCliente(cliente) {
   return (
     <View style={styles.container}>
-      <Image
-        source={{uri: cliente.posters.thumbnail}}
-        style={styles.thumbnail}
-      />
-      <View style={styles.rightContainer}>
-        <Text style={styles.title}>{cliente.nombre}</Text>
-      //  <Text style={styles.year}>{cliente.year}</Text>
-      </View>
+        <Text style={styles.title}>{cliente.title}</Text>
     </View>
   );
 }
-
+*/
 //////////////////////////////////////////////
 
   popRoute() {
     this.props.popRoute();
   }
+/*
+  render() {
 
-/*  render() {
-    const { props: { name, index, list } } = this;
-
-    return (
-      <Container style={styles.container}>
-        <Header>
-          <Button transparent onPress={() => this.popRoute()}>
-            <Icon name="ios-arrow-back" />
-          </Button>
-
-          <Title>{(name) ? this.props.name : 'Blank Page'}</Title>
-
-          <Button transparent onPress={this.props.openDrawer}>
-            <Icon name="ios-menu" />
-          </Button>
-        </Header>
-
-        <Content padder>
         if (!this.state.loaded) {
           return this.renderLoadingView();
         }
 
         var cliente = this.state.loaded;
         return this.rendercliente(cliente);
-        </Content>
-      </Container>
-    );
+
   }*/
 }
 

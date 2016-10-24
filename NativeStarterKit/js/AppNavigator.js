@@ -10,6 +10,7 @@ import { popRoute } from './actions/route';
 import Login from './components/login/';
 import Home from './components/home/';
 import BlankPage from './components/blankPage';
+import Debates from './components/debates';
 import SplashPage from './components/splashscreen/';
 import SideBar from './components/sideBar';
 import { statusBarColor } from './themes/base-theme';
@@ -97,6 +98,8 @@ class AppNavigator extends Component {
         return <Home navigator={navigator} />;
       case 'blankPage':
         return <BlankPage navigator={navigator} />;
+      case 'debates':
+        return <Debates navigator={navigator} />;
       default :
         return <Home navigator={navigator} />;
     }

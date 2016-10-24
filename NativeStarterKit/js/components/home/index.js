@@ -12,6 +12,7 @@ import myTheme from '../../themes/base-theme';
 import styles from './styles';
 
 const background = require('../../../images/debate3.jpg');
+const logo = require('../../../images/ico.png');
 
 
 const Item = Picker.Item;
@@ -52,14 +53,39 @@ class Home extends Component {
             <Icon name="ios-power" />
           </Button>
 
-          <Title>{(this.props.name) ? this.props.name : 'Between'}</Title>
+          <Title>{(this.props.name) ? this.props.name : 'BETWEEM'}</Title>
 
           <Button transparent onPress={this.props.openDrawer}>
             <Icon name="ios-menu" />
           </Button>
         </Header>
         <Content>
-          <Button block success onPress={() => this.pushNewRoute('blankPage')}> Debates </Button>
+          <Card>
+              <CardItem onPress={() => this.replaceRoute('debates')}>
+              <Thumbnail source={require('../../../images/ico.png')} />
+              <Text>Debate Australiano</Text>
+              </CardItem>
+
+              <CardItem cardBody onPress={() => this.replaceRoute('debates')}>
+              <Image style={styles.image} source={require('../../../images/debate1.jpg')} />
+              <Text>
+                   El debate australiano consiste en que dos equipos de tres miembros discuten sobre un asunto al que se suele llamar proposición.
+              </Text>
+             </CardItem>
+
+             <CardItem onPress={() => this.replaceRoute('blankPage')}>
+             <Thumbnail source={require('../../../images/ico.png')} />
+             <Text>Escuela de Relaciones Internacionales</Text>
+             <Text note>Universidad Latina de Costa Rica</Text>
+             </CardItem>
+
+             <CardItem cardBody onPress={() => this.replaceRoute('blankPage')}>
+             <Image style={styles.image} source={require('../../../images/logo.png')} />
+             <Text>
+                  El debate australiano consiste en que dos equipos de tres miembros discuten sobre un asunto al que se suele llamar proposición.
+             </Text>
+            </CardItem>
+          </Card>
         </Content>
         </Image>
       </Container>

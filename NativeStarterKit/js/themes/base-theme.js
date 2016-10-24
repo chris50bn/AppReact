@@ -104,16 +104,16 @@ export default {
 
   // Footer
   footerHeight: 55,
-  footerDefaultBg: (Platform.OS === 'ios') ? '#F8F8F8' : '#4179F7',
+  footerDefaultBg: (Platform.OS === 'ios') ? '#001900' : '#001900',
 
   // FooterTab
-  tabBarTextColor: (Platform.OS === 'ios') ? '#6b6b6b' : '#b3c7f9',
+  tabBarTextColor: (Platform.OS === 'ios') ? '#6b6b6b' : '#0B3B24',
   tabBarActiveTextColor: (Platform.OS === 'ios') ? '#007aff' : '#fff',
   tabActiveBgColor: (Platform.OS === 'ios') ? '#e4f0fe' : undefined,
 
   // Header
   iosToolbarBtnColor: '#007aff',
-  toolbarDefaultBg: (Platform.OS === 'ios') ? '#F8F8F8' : '#001900',
+  toolbarDefaultBg: (Platform.OS === 'ios') ? '#001900' : '#001900',
   toolbarHeight: (Platform.OS === 'ios') ? 64 : 56,
   toolbarIconSize: (Platform.OS === 'ios') ? 20 : 22,
   toolbarInputColor: '#CECDD2',
