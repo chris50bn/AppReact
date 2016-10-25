@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Container, Header, Title, Content, Text, Button, Icon } from 'native-base';
-
+import { Container, Header, Title, Content, Text, Button, Icon , CardSwiper, DeckSwiper, Picker, Card, CardItem, Thumbnail, List, ListItem} from 'native-base';
 import { openDrawer } from '../../actions/drawer';
 import { popRoute } from '../../actions/route';
 import styles from './styles';
@@ -13,7 +12,7 @@ import {
 } from 'react-native';
 
 var REQUEST_URL = 'https://raw.githubusercontent.com/facebook/react-native/master/docs/MoviesExample.json';
-var state = 2;
+var state = 3;
 
 class Debates extends Component {
 
@@ -53,16 +52,6 @@ class Debates extends Component {
     .done();
 }
 
-
-/*render() {
-    if (!this.state.movies) {
-      return this.renderLoadingView();
-    }
-
-    var movie = this.state.movies[0];
-    return this.renderMovie(movie);
-  }
-*/
   renderLoadingView() {
     return (
       <View style={styles.container}>
@@ -100,17 +89,30 @@ class Debates extends Component {
             <Icon name="ios-arrow-back" />
           </Button>
 
-          <Title>{(name) ? this.props.name : 'Debates'}</Title>
+          <Title>{(name) ? this.props.name : 'Secciones del debate'}</Title>
 
           <Button transparent onPress={this.props.openDrawer}>
             <Icon name="ios-menu" />
           </Button>
         </Header>
 
-        <Content padder>
-          <Text>
-            {(!isNaN(index)) ? list[index] : 'Parte inicial del debate. . .'}
-          </Text>
+        <Content>
+        <Card >
+            <CardItem header  style={{backgroundColor:'#2F4F4F'}} >
+              <Thumbnail source={require('../../../images/Podium.png')} />
+              <Text>Debate Australiano</Text>
+              <Text>Presentación Inicial</Text>
+            </CardItem>
+
+            <CardItem  style={{backgroundColor:'#696969'}}>
+              <Image style={styles.image} source={require('../../../images/HiRes.jpg')} />
+
+                <Text>
+                   El debate australiano existe una presentación inicial de los temas a tratar
+                </Text>
+           </CardItem>
+
+           </Card>
         </Content>
       </Container>
       //this.renderMovie(movie);
@@ -124,22 +126,146 @@ class Debates extends Component {
           <Icon name="ios-arrow-back" />
         </Button>
 
-        <Title>{(name) ? this.props.name : 'Debates'}</Title>
+        <Title>{(name) ? this.props.name : 'Secciones del debate'}</Title>
 
         <Button transparent onPress={this.props.openDrawer}>
           <Icon name="ios-menu" />
         </Button>
       </Header>
 
-      <Content padder>
-        <Text>
-          {(!isNaN(index)) ? list[index] : 'es la parte media del debate. . .'}
-        </Text>
+      <Content>
+      <Card >
+          <CardItem header  style={{backgroundColor:'#2F4F4F'}} >
+            <Thumbnail source={require('../../../images/Podium1.png')} />
+            <Text>Debate Australiano</Text>
+            <Text>Primeras argumentaciones</Text>
+          </CardItem>
+
+          <CardItem style={{backgroundColor:'#696969'}}>
+            <Image style={styles.image} source={require('../../../images/debates1.jpg')} />
+
+              <Text>
+                 En el debate australiano la segunda etapa consiste en presentar las primeras argumentaciones de cada una de las partes.
+              </Text>
+         </CardItem>
+
+         </Card>
       </Content>
     </Container>
-    //this.renderMovie(movie);
-  );
-}
+
+      );
+    }
+
+    if (state==3){
+    return (
+      <Container style={styles.container}>
+        <Header>
+          <Button transparent onPress={() => this.popRoute()}>
+            <Icon name="ios-arrow-back" />
+          </Button>
+
+          <Title>{(name) ? this.props.name : 'Secciones del debate'}</Title>
+
+          <Button transparent onPress={this.props.openDrawer}>
+            <Icon name="ios-menu" />
+          </Button>
+        </Header>
+
+        <Content>
+        <Card >
+            <CardItem header  style={{backgroundColor:'#2F4F4F'}} >
+              <Thumbnail source={require('../../../images/Ask.png')} />
+              <Text>Debate Australiano</Text>
+              <Text>Preguntas</Text>
+            </CardItem>
+
+            <CardItem  style={{backgroundColor:'#696969'}}>
+              <Image style={styles.image} source={require('../../../images/debate.jpg')} />
+
+                <Text>
+                   En esta parte del debate se dirigen distintas preguntas realizadas hacia cada una de las partes
+                </Text>
+           </CardItem>
+
+           </Card>
+        </Content>
+      </Container>
+      //this.renderMovie(movie);
+    );
+  }
+  if (state==4){
+  return (
+    <Container style={styles.container}>
+      <Header>
+        <Button transparent onPress={() => this.popRoute()}>
+          <Icon name="ios-arrow-back" />
+        </Button>
+
+        <Title>{(name) ? this.props.name : 'Secciones del debate'}</Title>
+
+        <Button transparent onPress={this.props.openDrawer}>
+          <Icon name="ios-menu" />
+        </Button>
+      </Header>
+
+      <Content>
+      <Card >
+          <CardItem header style={{backgroundColor:'#2F4F4F'}} >
+            <Thumbnail source={require('../../../images/users.png')} />
+            <Text>Debate Australiano</Text>
+            <Text>Nuevas argumentaciones </Text>
+          </CardItem>
+
+          <CardItem  style={{backgroundColor:'#696969'}}>
+            <Image style={styles.image} source={require('../../../images/debate2.jpg')} />
+
+              <Text>
+                   Una vez pasada la estapa de preguntas se continúa con las nuevas argumentaciones de cada posición.
+              </Text>
+           </CardItem>
+
+           </Card>
+        </Content>
+      </Container>
+    );
+  }
+    if (state==5){
+      return (
+      <Container style={styles.container}>
+        <Header>
+          <Button transparent onPress={() => this.popRoute()}>
+            <Icon name="ios-arrow-back" />
+          </Button>
+
+          <Title>{(name) ? this.props.name : 'Secciones del debate'}</Title>
+
+          <Button transparent onPress={this.props.openDrawer}>
+            <Icon name="ios-menu" />
+          </Button>
+        </Header>
+
+        <Content>
+        <Card >
+            <CardItem header  style={{backgroundColor:'#2F4F4F'}} >
+              <Thumbnail source={require('../../../images/acuerdo.png')} />
+              <Text>Debate Australiano</Text>
+              <Text>Conclusiones</Text>
+            </CardItem>
+
+            <CardItem style={{backgroundColor:'#696969'}}>
+            <Image style={styles.image} source={require('../../../images/debates2.jpg')} />
+
+                <Text>
+                   Por ultimo se dan las conclusiones del debate.
+                </Text>
+           </CardItem>
+
+          </Card>
+        </Content>
+      </Container>
+
+      );
+    }
   }
 }
 

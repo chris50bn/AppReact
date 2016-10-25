@@ -31,4 +31,14 @@ text: {
 mt: {
   marginTop: 20,
 },
+image: {
+  flex: 0,
+  padding: 0,
+  paddingRight: 0,
+  paddingTop: 0,
+  width: 375,
+  height: 300,
+  justifyContent: 'center',
+  alignItems: 'center'
+},
 });

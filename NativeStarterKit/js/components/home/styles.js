@@ -34,4 +34,14 @@ module.exports = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
   },
+  image: {
+    flex: 0,
+    padding: 0,
+    paddingRight: 0,
+    paddingTop: 0,
+    width: 375,
+    height: 150,
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
 });

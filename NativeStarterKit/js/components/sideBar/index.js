@@ -31,7 +31,7 @@ class SideBar extends Component {
       <Content theme={myTheme} style={styles.sidebar} >
       <Container>
         <Image source={background} style={styles.image}>
-        <Text style={styles.title}>AppDebate</Text>
+        <Text style={styles.title}>BETWEEM</Text>
         </Image>
         </Container>
         <List>

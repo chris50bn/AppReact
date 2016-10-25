@@ -12,7 +12,7 @@ import myTheme from '../../themes/base-theme';
 import styles from './styles';
 
 const background = require('../../../images/debate3.jpg');
-const logo = require('../../../images/ico.png');
+
 
 
 const Item = Picker.Item;
@@ -60,30 +60,32 @@ class Home extends Component {
           </Button>
         </Header>
         <Content>
-          <Card>
-              <CardItem onPress={() => this.replaceRoute('debates')}>
-              <Thumbnail source={require('../../../images/ico.png')} />
-              <Text>Debate Australiano</Text>
+          <Card >
+              <CardItem header onPress={() => this.pushNewRoute('debates')} style={{backgroundColor:'#2F4F4F'}} >
+                <Thumbnail source={require('../../../images/discurso.png')} />
+                <Text>Debate Australiano</Text>
               </CardItem>
 
-              <CardItem cardBody onPress={() => this.replaceRoute('debates')}>
-              <Image style={styles.image} source={require('../../../images/debate1.jpg')} />
-              <Text>
-                   El debate australiano consiste en que dos equipos de tres miembros discuten sobre un asunto al que se suele llamar proposición.
-              </Text>
+              <CardItem onPress={() => this.pushNewRoute('debates')} style={{backgroundColor:'#696969'}}>
+                <Image style={styles.image} source={require('../../../images/debate1.jpg')} />
+
+                  <Text>
+                     El debate australiano consiste en que dos equipos de tres miembros discuten
+                     sobre un asunto al que se suele llamar proposición.
+                  </Text>
              </CardItem>
 
-             <CardItem onPress={() => this.replaceRoute('blankPage')}>
-             <Thumbnail source={require('../../../images/ico.png')} />
-             <Text>Escuela de Relaciones Internacionales</Text>
-             <Text note>Universidad Latina de Costa Rica</Text>
-             </CardItem>
 
-             <CardItem cardBody onPress={() => this.replaceRoute('blankPage')}>
-             <Image style={styles.image} source={require('../../../images/logo.png')} />
-             <Text>
-                  El debate australiano consiste en que dos equipos de tres miembros discuten sobre un asunto al que se suele llamar proposición.
-             </Text>
+              <CardItem header onPress={() => this.pushNewRoute('blankPage')}  style={{backgroundColor:'#2F4F4F'}} >
+                <Thumbnail style={{ resizeMode: 'cover' }} source={require('../../../images/mortarboard.png')} />
+                <Text note>Universidad Latina de Costa Rica</Text>
+                <Text>Facultad de Ciencias Sociales</Text>
+                <Text>Escuela de Relaciones Internacionales</Text>
+              </CardItem>
+
+              <CardItem  onPress={() => this.pushNewRoute('blankPage')} style={{backgroundColor:'#696969'}}>
+              <Image style={styles.image} source={require('../../../images/Ulatina.png')} />
+
             </CardItem>
           </Card>
         </Content>

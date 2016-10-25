@@ -107,7 +107,7 @@ export default {
   footerDefaultBg: (Platform.OS === 'ios') ? '#001900' : '#001900',
 
   // FooterTab
-  tabBarTextColor: (Platform.OS === 'ios') ? '#6b6b6b' : '#0B3B24',
+  tabBarTextColor: (Platform.OS === 'ios') ? '#6b6b6b' : '#b3c7f9',
   tabBarActiveTextColor: (Platform.OS === 'ios') ? '#007aff' : '#fff',
   tabActiveBgColor: (Platform.OS === 'ios') ? '#e4f0fe' : undefined,
 
