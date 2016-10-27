@@ -12,7 +12,7 @@ import {
 } from 'react-native';
 
 var REQUEST_URL = 'https://raw.githubusercontent.com/facebook/react-native/master/docs/MoviesExample.json';
-var state = 3;
+var state = 0;
 
 class Debates extends Component {
 
@@ -52,30 +52,99 @@ class Debates extends Component {
     .done();
 }
 
-  renderLoadingView() {
-    return (
-      <View style={styles.container}>
-        <Text>
-          Loading movies...
-        </Text>
-      </View>
-    );
-  }
+renderSecciones(){
+  const { props: { name, index, list } } = this;
+  return(
+    <Container style={styles.container}>
+      <Header>
+        <Button transparent onPress={() => this.popRoute()}>
+          <Icon name="ios-arrow-back" />
+        </Button>
 
-  renderMovie(movie) {
-    return (
-      <View style={styles.container}>
-        <Image
-          source={{uri: movie.posters.thumbnail}}
-          style={styles.thumbnail}
-        />
-        <View style={styles.rightContainer}>
-          <Text style={styles.title}>{movie.title}</Text>
-          <Text style={styles.year}>{movie.year}</Text>
-        </View>
-      </View>
-    );
-  }
+        <Title>{(name) ? this.props.name : 'Secciones del debate'}</Title>
+
+        <Button transparent onPress={this.props.openDrawer}>
+          <Icon name="ios-menu" />
+        </Button>
+      </Header>
+
+      <Content>
+      <Card >
+            <CardItem header  style={{backgroundColor:'#2F4F4F'}} >
+              <Thumbnail source={require('../../../images/Podium.png')} />
+              <Text>Debate Australiano</Text>
+              <Text>Presentación Inicial</Text>
+            </CardItem>
+
+            <CardItem  style={{backgroundColor:'#696969'}}>
+              <Image style={styles.image} source={require('../../../images/HiRes.jpg')} />
+
+                <Text>
+                   El debate australiano existe una presentación inicial de los temas a tratar
+                </Text>
+           </CardItem>
+
+             <CardItem header  style={{backgroundColor:'#2F4F4F'}} >
+               <Thumbnail source={require('../../../images/Podium1.png')} />
+               <Text>Debate Australiano</Text>
+               <Text>Primeras argumentaciones</Text>
+             </CardItem>
+
+             <CardItem style={{backgroundColor:'#696969'}}>
+               <Image style={styles.image} source={require('../../../images/debates1.jpg')} />
+
+                 <Text>
+                    En el debate australiano la segunda etapa consiste en presentar las primeras argumentaciones de cada una de las partes.
+                 </Text>
+            </CardItem>
+
+            <CardItem header  style={{backgroundColor:'#2F4F4F'}} >
+              <Thumbnail source={require('../../../images/Ask.png')} />
+              <Text>Debate Australiano</Text>
+              <Text>Preguntas</Text>
+            </CardItem>
+
+            <CardItem  style={{backgroundColor:'#696969'}}>
+              <Image style={styles.image} source={require('../../../images/debate.jpg')} />
+
+                <Text>
+                   En esta parte del debate se dirigen distintas preguntas realizadas hacia cada una de las partes
+                </Text>
+           </CardItem>
+
+           <CardItem header style={{backgroundColor:'#2F4F4F'}} >
+             <Thumbnail source={require('../../../images/users.png')} />
+             <Text>Debate Australiano</Text>
+             <Text>Nuevas argumentaciones </Text>
+           </CardItem>
+
+           <CardItem  style={{backgroundColor:'#696969'}}>
+             <Image style={styles.image} source={require('../../../images/debate2.jpg')} />
+
+               <Text>
+                    Una vez pasada la estapa de preguntas se continúa con las nuevas argumentaciones de cada posición.
+               </Text>
+            </CardItem>
+
+            <CardItem header  style={{backgroundColor:'#2F4F4F'}} >
+              <Thumbnail source={require('../../../images/acuerdo.png')} />
+              <Text>Debate Australiano</Text>
+              <Text>Conclusiones</Text>
+            </CardItem>
+
+            <CardItem style={{backgroundColor:'#696969'}}>
+            <Image style={styles.image} source={require('../../../images/debates2.jpg')} />
+
+                <Text>
+                   Por ultimo se dan las conclusiones del debate.
+                </Text>
+           </CardItem>
+         </Card>
+      </Content>
+    </Container>
+  );
+}
+
   ////////////////////////////////////////////////////////////////////
 
   render() {
@@ -266,6 +335,9 @@ class Debates extends Component {
 
       );
     }
+
+    else
+      return this.renderSecciones();
   }
 }
 
