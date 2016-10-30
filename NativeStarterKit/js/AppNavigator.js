@@ -13,6 +13,9 @@ import BlankPage from './components/blankPage';
 import Debates from './components/debates';
 import SplashPage from './components/splashscreen/';
 import SideBar from './components/sideBar';
+import Timer from './components/timer';
+import Register from './components/register';
+import Registertest from './components/registertest';
 import { statusBarColor } from './themes/base-theme';
 
 Navigator.prototype.replaceWithAnimation = function replaceWithAnimation(route) {
@@ -100,6 +103,12 @@ class AppNavigator extends Component {
         return <BlankPage navigator={navigator} />;
       case 'debates':
         return <Debates navigator={navigator} />;
+      case 'timer':
+        return <Timer navigator={navigator} />;
+      case 'register':
+        return <Register navigator={navigator} />;
+      case 'registertest':
+        return <Registertest navigator={navigator} />;
       default :
         return <Home navigator={navigator} />;
     }

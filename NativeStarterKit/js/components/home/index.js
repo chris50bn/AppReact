@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import { TouchableOpacity, Image } from 'react-native';
 import { connect } from 'react-redux';
-import { Container, Header, Title, Content, Text, Button, Icon , CardSwiper, DeckSwiper, Picker, Card, CardItem, Thumbnail, List, ListItem} from 'native-base';
+import { Container, Header, Title, Content, Text, Button, Icon , CardSwiper, View, DeckSwiper, Picker, Card, CardItem, Thumbnail, List, ListItem} from 'native-base';
 import { Grid, Row } from 'react-native-easy-grid';
 
 import { openDrawer, closeDrawer } from '../../actions/drawer';
@@ -67,26 +67,25 @@ class Home extends Component {
               </CardItem>
 
               <CardItem onPress={() => this.pushNewRoute('debates')} style={{backgroundColor:'#696969'}}>
-                <Image style={styles.image} source={require('../../../images/debate1.jpg')} />
-
+                <Image style={styles.image} source={require('../../../images/debates1.jpg')} />
                   <Text>
                      El debate australiano consiste en que dos equipos de tres miembros discuten
                      sobre un asunto al que se suele llamar proposición.
                   </Text>
+
              </CardItem>
 
-
               <CardItem header onPress={() => this.pushNewRoute('blankPage')}  style={{backgroundColor:'#2F4F4F'}} >
-                <Thumbnail style={{ resizeMode: 'cover' }} source={require('../../../images/mortarboard.png')} />
+                <Thumbnail source={require('../../../images/mortarboard.png')} />
                 <Text note>Universidad Latina de Costa Rica</Text>
                 <Text>Facultad de Ciencias Sociales</Text>
                 <Text>Escuela de Relaciones Internacionales</Text>
               </CardItem>
 
               <CardItem  onPress={() => this.pushNewRoute('blankPage')} style={{backgroundColor:'#696969'}}>
-              <Image style={styles.image} source={require('../../../images/Ulatina.png')} />
-
+                <Image style={styles.image} source={require('../../../images/Ulatina.png')} />
             </CardItem>
+
           </Card>
         </Content>
         </Image>
@@ -110,5 +109,6 @@ function mapStateToProps(state) {
     list: state.list.list,
   };
 }
+
 
 export default connect(mapStateToProps, bindAction)(Home);

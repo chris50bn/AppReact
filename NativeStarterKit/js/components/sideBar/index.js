@@ -43,6 +43,18 @@ class SideBar extends Component {
           <Icon name="ios-person" />
             <Text>Login</Text>
           </ListItem>
+          <ListItem iconLeft button onPress={() => this.navigateTo('timer')} >
+          <Icon name="ios-timer" />
+            <Text>Cronómetro</Text>
+          </ListItem>
+          <ListItem iconLeft button onPress={() => this.navigateTo('blankPage')} >
+          <Icon name="md-list" />
+            <Text>reporte</Text>
+          </ListItem>
+          <ListItem iconLeft button onPress={() => this.navigateTo('registertest')} >
+          <Icon name="md-list" />
+            <Text>Registrarse</Text>
+          </ListItem>
         </List>
       </Content>
     );

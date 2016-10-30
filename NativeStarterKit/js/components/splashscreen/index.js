@@ -1,4 +1,4 @@
-
+.55
 import React, { Component } from 'react';
 import { View } from 'native-base';
 

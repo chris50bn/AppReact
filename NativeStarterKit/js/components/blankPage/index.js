@@ -13,8 +13,8 @@ import {
   View,
 } from 'react-native';
 
-
-var REQUEST_URL = 'https://raw.githubusercontent.com/facebook/react-native/master/docs/MoviesExample.json';
+var Register = 'http://between.azurewebsites.net/RestServer3/ws/cliente/insertUsuario?nombre=coco&apellido=bonilla&contrasenna=123&correo=chris50bn@hotmail.com&tipo=1';
+var REQUEST_URL = 'http://between.azurewebsites.net/RestServer/ws/cliente/clienteFormatoLista';
 
 class BlankPage extends Component {
 
@@ -31,7 +31,7 @@ class BlankPage extends Component {
   constructor(props) {
   super(props);
   this.state = {
-    loaded: null,
+    loaded: false,
   };
 }
 
@@ -45,12 +45,13 @@ componentDidMount() {
     .then((response) => response.json())
     .then((responseData) => {
       this.setState({
-        loaded: responseData.loaded,
+        loaded: true,
+        cliente:responseData.cliente,
       });
     })
     .done();
 }
-
+/*
 render() {
     const { props: { name, index, list } } = this;
 
@@ -76,10 +77,11 @@ render() {
       </Container>
     );
   }
+*//*
+render() {
+    const { props: { name, index, list } } = this;
 
-
-
-/*    return (
+    return (
 
       <Container style={styles.container}>
         <Header>
@@ -99,10 +101,10 @@ render() {
           </Container>
         </Container>
 
-  );*/
+  );
 
-
-/*
+}
+*/
 renderLoadingView() {
   return (
     <View style={styles.container}>
@@ -113,30 +115,32 @@ renderLoadingView() {
   );
 }
 
-renderCliente(cliente) {
+renderCliente() {
   return (
     <View style={styles.container}>
-        <Text style={styles.title}>{cliente.title}</Text>
+        <Text style={styles.title}>{this.state.cliente[0].nombre}</Text>
     </View>
   );
 }
-*/
+
 //////////////////////////////////////////////
 
   popRoute() {
     this.props.popRoute();
   }
-/*
+
   render() {
 
         if (!this.state.loaded) {
           return this.renderLoadingView();
         }
+        console.log(
+            this.state.cliente.title
+            );
 
-        var cliente = this.state.loaded;
-        return this.rendercliente(cliente);
+        return this.renderCliente();
 
-  }*/
+  }
 }
 
 function bindAction(dispatch) {

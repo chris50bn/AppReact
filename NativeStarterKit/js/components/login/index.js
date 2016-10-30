@@ -55,6 +55,9 @@ class Login extends Component {
                 <Button style={styles.btn} onPress={() => this.replaceRoute('home')}>
                   Login
                 </Button>
+                <Button style={styles.btn} onPress={() => this.replaceRoute('register')}>
+                  register
+                </Button>
               </View>
           </Content>
           </Image>

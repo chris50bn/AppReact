@@ -67,7 +67,7 @@ renderSecciones(){
           <Icon name="ios-menu" />
         </Button>
       </Header>
-
+   
       <Content>
       <Card >
             <CardItem header  style={{backgroundColor:'#2F4F4F'}} >
@@ -77,7 +77,7 @@ renderSecciones(){
             </CardItem>
 
             <CardItem  style={{backgroundColor:'#696969'}}>
-              <Image style={styles.image} source={require('../../../images/HiRes.jpg')} />
+              <Image style={styles.image} source={require('../../../images/0.jpg')} />
 
                 <Text>
                    El debate australiano existe una presentación inicial de los temas a tratar

@@ -1,7 +1,11 @@
 
 const React = require('react-native');
 
-const { StyleSheet } = React;
+const { StyleSheet, Dimensions } = React;
+
+
+const windowWidth = Dimensions.get('window').width;
+const windowHeight = Dimensions.get('window').height
 
 module.exports = StyleSheet.create({
   container: {
@@ -12,6 +16,12 @@ module.exports = StyleSheet.create({
     right: 0,
     backgroundColor: '#374046',
   },
+  container1: {
+  flex: 1,
+  justifyContent: 'center',
+  alignItems: 'center',
+  position: 'relative'
+},
   shadow: {
     flex: 1,
     width: null,
@@ -36,12 +46,15 @@ module.exports = StyleSheet.create({
   },
   image: {
     flex: 0,
-    padding: 0,
-    paddingRight: 0,
-    paddingTop: 0,
-    width: 375,
-    height: 150,
-    justifyContent: 'center',
-    alignItems: 'center'
+    width: windowWidth * 1,
+    height: windowHeight * 0.33,
+    resizeMode: 'stretch',
   },
+  canvas: {
+  position: 'absolute',
+  top: 0,
+  left: 0,
+  bottom: 0,
+  right: 0,
+},
 });

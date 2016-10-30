@@ -1,7 +1,10 @@
 
 const React = require('react-native');
 
-const { StyleSheet } = React;
+const { StyleSheet, Dimensions } = React;
+
+const windowWidth = Dimensions.get('window').width;
+const windowHeight = Dimensions.get('window').height
 
 module.exports = StyleSheet.create({
 
@@ -33,12 +36,8 @@ mt: {
 },
 image: {
   flex: 0,
-  padding: 0,
-  paddingRight: 0,
-  paddingTop: 0,
-  width: 375,
-  height: 300,
-  justifyContent: 'center',
-  alignItems: 'center'
+  width: windowWidth * 1,
+  height: windowHeight * 0.33,
+  resizeMode: 'stretch',
 },
 });
